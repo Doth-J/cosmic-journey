@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import Lamp from "./components/Lamp";
 import useTitle from "./hooks/useTitle";
