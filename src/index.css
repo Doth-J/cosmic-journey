@@ -41,6 +41,41 @@ body {
   box-shadow: 0px 0px 10px hsl(238, 85%, 8%), 0px 0px 20px hsl(170, 35%, 48%);
 }
 
+@keyframes vibing {
+  0% {
+    box-shadow: 0px 0px 10px hsl(238, 85%, 8%), 0px 0px 20px hsl(170, 35%, 48%);
+  }
+  10% {
+    box-shadow: 0px 0px 10px hsl(238, 85%, 8%), 0px 0px 30px hsl(170, 35%, 48%);
+  }
+  20% {
+    box-shadow: 0px 0px 10px hsl(238, 85%, 8%), 0px 0px 15px hsl(170, 35%, 48%);
+  }
+  30% {
+    box-shadow: 0px 0px 10px hsl(238, 85%, 8%), 0px 0px 30px hsl(170, 35%, 48%);
+  }
+  40% {
+    box-shadow: 0px 0px 10px hsl(238, 85%, 8%), 0px 0px 5px hsl(170, 35%, 48%);
+  }
+  50% {
+    box-shadow: 0px 0px 10px hsl(238, 85%, 8%), 0px 0px 20px hsl(170, 35%, 48%);
+  }
+  60% {
+    box-shadow: 0px 0px 10px hsl(238, 85%, 8%), 0px 0px 10px hsl(170, 35%, 48%);
+  }
+  70% {
+    box-shadow: 0px 0px 10px hsl(238, 85%, 8%), 0px 0px 30px hsl(170, 35%, 48%);
+  }
+  80% {
+    box-shadow: 0px 0px 10px hsl(238, 85%, 8%), 0px 0px 15px hsl(170, 35%, 48%);
+  }
+  90% {
+    box-shadow: 0px 0px 10px hsl(238, 85%, 8%), 0px 0px 25px hsl(170, 35%, 48%);
+  }
+  100% {
+    box-shadow: 0px 0px 10px hsl(238, 85%, 8%), 0px 0px 15px hsl(170, 35%, 48%);
+  }
+}
 .lamp.flicker-off {
   background: linear-gradient(
     to bottom,

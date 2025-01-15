@@ -15,16 +15,18 @@ export default function App({ title }: { title: string }) {
       <Portrait isOpen={isOpen} title={title}>
         <div className={`container ${isOpen ? "on" : "off"}`}>
           {" "}
-          <AudioPlayer isOpen={!isOpen} source="./whispers.mp3" />
+          <AudioPlayer
+            setOpen={setOpen}
+            isOpen={!isOpen}
+            source="./whispers.mp3"
+          />
         </div>
       </Portrait>
       <Creator
         isOpen={isOpen}
         creator="Developed by Doth-J"
         link="https://github.com/Doth-J"
-      >
-        <AudioPlayer isOpen={!isOpen} source="./voyage.mp3" />
-      </Creator>
+      ></Creator>
     </div>
   );
 }

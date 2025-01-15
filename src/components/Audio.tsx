@@ -1,25 +1,45 @@
-import { useEffect, useRef } from "react";
+import { Dispatch, SetStateAction, useEffect, useRef } from "react";
 
 export default function AudioPlayer({
   source,
   isOpen,
+  setOpen,
 }: {
   source: string;
   isOpen: boolean;
+  setOpen: Dispatch<SetStateAction<boolean>>;
 }) {
   const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
-    if (audioRef.current) {
+    const audioElement = audioRef.current;
+
+    if (audioElement) {
       if (isOpen) {
-        audioRef.current.play().catch((error) => {
+        audioElement.play().catch((error) => {
           console.warn("Playback failed or blocked:", error);
         });
       } else {
-        audioRef.current.pause();
+        audioElement.pause();
       }
     }
   }, [isOpen]);
+  useEffect(() => {
+    const audioElement = audioRef.current;
+
+    const handleTrackEnd = () => {
+      setOpen(true);
+    };
+
+    if (audioElement) {
+      audioElement.addEventListener("ended", handleTrackEnd);
+    }
+    return () => {
+      if (audioElement) {
+        audioElement.removeEventListener("ended", handleTrackEnd);
+      }
+    };
+  }, [setOpen]);
 
   return (
     <audio
@@ -29,7 +49,7 @@ export default function AudioPlayer({
       }`}
     >
       <source src={source} type="audio/mp3" />
-      Your browser does not support audio element.
+      Your browser does not support the audio element.
     </audio>
   );
 }
